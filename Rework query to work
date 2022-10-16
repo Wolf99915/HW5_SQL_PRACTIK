@@ -1,0 +1,9 @@
+SELECT t.first_name, t.last_name, r.number, c.name, rozklad.time FROM rozklad INNER JOIN lessons l ON l.id=rozklad.lesson_id INNER JOIN teachers t ON t.id=rozklad.teacher_id INNER JOIN rooms r ON r.id=rozklad.room_id INNER JOIN rozklad rz ON rz.room_id=r.id INNER JOIN classes c ON c.id=rz.class_id WHERE rz.time
+BETWEEN "11:00:00" AND "13:00:00";
++------------+-------------+--------+------+----------+
+| first_name | last_name   | number | name | time     |
++------------+-------------+--------+------+----------+
+| Natalia    | Khmelnutska |      1 | 2-a  | 12:00:00 |
++------------+-------------+--------+------+----------+
+1 row in set (0,00 sec)
+
